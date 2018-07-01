@@ -7,3 +7,5 @@
 
 # .tfvars files
 *.tfvars
+
+uri_rewriter.zip

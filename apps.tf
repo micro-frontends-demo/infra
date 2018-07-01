@@ -3,6 +3,7 @@ module "wrapper" {
   domain = "${local.site_domain}"
   hosted_zone_id = "${data.aws_route53_zone.hosted_zone.zone_id}"
   acm_certificate_arn = "${aws_acm_certificate.cert.arn}"
+  uri_rewriter_arn = "${aws_lambda_function.uri_rewriter.qualified_arn}"
 }
 
 module "static_content" {
@@ -10,6 +11,7 @@ module "static_content" {
   domain = "content.${local.site_domain}"
   hosted_zone_id = "${data.aws_route53_zone.hosted_zone.zone_id}"
   acm_certificate_arn = "${aws_acm_certificate.cert.arn}"
+  uri_rewriter_arn = "${aws_lambda_function.uri_rewriter.qualified_arn}"
 }
 
 module "restaurant_browse_app" {
@@ -17,6 +19,7 @@ module "restaurant_browse_app" {
   domain = "browse.${local.site_domain}"
   hosted_zone_id = "${data.aws_route53_zone.hosted_zone.zone_id}"
   acm_certificate_arn = "${aws_acm_certificate.cert.arn}"
+  uri_rewriter_arn = "${aws_lambda_function.uri_rewriter.qualified_arn}"
 }
 
 module "restaurant_order_app" {
@@ -24,4 +27,5 @@ module "restaurant_order_app" {
   domain = "order.${local.site_domain}"
   hosted_zone_id = "${data.aws_route53_zone.hosted_zone.zone_id}"
   acm_certificate_arn = "${aws_acm_certificate.cert.arn}"
+  uri_rewriter_arn = "${aws_lambda_function.uri_rewriter.qualified_arn}"
 }
