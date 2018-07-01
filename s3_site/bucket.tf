@@ -7,6 +7,10 @@ resource "aws_s3_bucket" "site_bucket" {
     index_document = "index.html"
     error_document = "index.html"
   }
+  cors_rule {
+    allowed_origins = "${var.all_domains}"
+    allowed_methods = ["GET", "HEAD"]
+  }
   versioning {
     enabled = true
   }
