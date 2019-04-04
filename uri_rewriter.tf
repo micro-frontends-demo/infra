@@ -71,7 +71,7 @@ data "aws_iam_policy_document" "uri_rewriter_permissions" {
   statement {
     actions = ["cloudfront:UpdateDistribution"]
     resources = [
-      "${module.wrapper.distribution_arn}",
+      "${module.container.distribution_arn}",
       "${module.static_content.distribution_arn}",
       "${module.restaurant_browse_app.distribution_arn}",
       "${module.restaurant_order_app.distribution_arn}"

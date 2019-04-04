@@ -7,7 +7,7 @@ locals {
   }
 }
 
-module "wrapper" {
+module "container" {
   source = "./s3_site/"
   domain = "${replace(local.apps["root"], "https://", "")}"
   all_domains = "${values(local.apps)}"
