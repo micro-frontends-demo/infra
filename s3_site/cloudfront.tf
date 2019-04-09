@@ -30,11 +30,6 @@ resource "aws_cloudfront_distribution" "cloudfront_distro" {
         forward = "none"
       }
     }
-
-    lambda_function_association {
-      event_type = "origin-request"
-      lambda_arn = "${var.uri_rewriter_arn}"
-    }
   }
 
   # Needed for single-page apps with client-side routing

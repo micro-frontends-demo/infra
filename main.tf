@@ -11,10 +11,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-provider "null" {
-  version = "~> 1.0"
-}
-
 locals {
   site_domain = "demo.microfrontends.com"
 }

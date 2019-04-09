@@ -17,8 +17,3 @@ variable "acm_certificate_arn" {
   type = "string"
   description = "The ARN of the ACM certificate that will front this site"
 }
-
-variable "uri_rewriter_arn" {
-  type = "string"
-  description = "The ARN of a lambda function that will rewrite URIs in some requests"
-}
