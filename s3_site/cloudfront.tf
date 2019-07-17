@@ -29,7 +29,7 @@ resource "aws_cloudfront_distribution" "cloudfront_distro" {
       cookies {
         forward = "none"
       }
-      headers = ["Access-Control-Allow-Origin"]
+      headers = ["Origin"]
     }
   }
 
